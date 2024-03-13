@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styles: []
+  template: `
+    <app-header/>
+  `,
 })
 export class AppComponent {
   title = 'amgular-store';

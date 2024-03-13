@@ -1,0 +1,50 @@
+<mat-toolbar class="border-x flex justify-between">
+    <a
+    class="bg-red-500 uppercase p-4 text-white font-bold"
+    routerLink="home">
+    Home | Juan Vidal Store
+    </a>
+    <!-- here will be the counter of ther products added -->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon [matBadge]="3" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <div class="p-3 divide-y divide-solid">
+            <div class="pb-3 flex justify-between ">
+                <span class="mr-16">3 Items</span>
+                <a routerLink="cart">View Cart</a>
+            </div>
+            <!--  rendering products inside the cart -->
+            <div class="py-2">
+                <div class="flex py-2 justify-between font-light">
+                    Keyboard + 1
+                    <span class="font-bold">{{'150' | currency}}</span>
+                </div>
+                <div class="flex py-2 justify-between font-light">
+                    Keyboard + 1
+                    <span class="font-bold">{{'150' | currency}}</span>
+                </div>
+                <div class="flex py-2 justify-between font-light">
+                    Keyboard + 1
+                    <span class="font-bold">{{'150' | currency}}</span>
+                </div>
+            </div>
+            <!-- showing total cart price -->
+            <div class="py-4 flex justify-between font-light">
+                Total:
+                <span class="font-bold">{{ '450' | currency }}</span>
+            </div>
+            <!-- actions cart -->
+            <div class="pt-2 flex justify-between">
+                <button class="bg-rose-600 text-white rounded-full w-9 h-9">
+                    <mat-icon>remove_shopping_cart</mat-icon>
+                </button>
+                <button
+                routerLink="cart"
+                class="bg-blue-600 text-white rounded-full w-9 h-9">
+                    <mat-icon>remove_shopping_cart</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-menu>
+</mat-toolbar>
