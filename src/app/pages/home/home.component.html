@@ -1,0 +1,21 @@
+<mat-drawer-container
+[autosize]="true"
+class="h-screen border-x"
+>
+    <!-- making the sidebar -->
+    <mat-drawer
+    mode="side"
+    opened
+    class="p-6"
+    >
+        <div>
+            Filter
+        </div>
+    </mat-drawer>
+    <!-- content home -->
+    <mat-drawer-content
+    class="p-6">
+        <app-products-header (columnsCountChanges)="onColumnsChange($event)"/>
+        {{ cols }}
+    </mat-drawer-content>
+</mat-drawer-container>
